@@ -27,7 +27,8 @@ import java.util.List;
  */
 public class UnicornBasket {
 	
-	private String uuid = null;		
+        // Modifying uuid into userUid for UnicornBasket
+	private String userUid = null;		
 	private List<Unicorn> unicorns = null;
 	
 	
@@ -42,23 +43,23 @@ public class UnicornBasket {
 	 * @param uuid
 	 */
 	public UnicornBasket(String uuid){
-		this.uuid = uuid;
+		this.userUid = uuid;
 	}
 
 	/**
 	 * 
 	 * @return
 	 */
-	public String getUuid() {
-		return uuid;
+	public String getUserUid() {
+		return userUid;
 	}
 
 	/**
 	 * 
 	 * @param uuid
 	 */
-	public void setUuid(String uuid) {
-		this.uuid = uuid;
+	public void setUserUid(String uuid) {
+		this.userUid = uuid;
 	}
 	
 	/**

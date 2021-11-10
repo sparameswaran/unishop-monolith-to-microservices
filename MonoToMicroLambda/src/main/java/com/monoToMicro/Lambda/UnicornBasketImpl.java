@@ -53,11 +53,11 @@ public class UnicornBasketImpl implements RequestHandler <UnicornBasket, String>
 		DynamoDBMapper mapper = new DynamoDBMapper(client);
 				
 		//Get current basket
-		UnicornBasket currentBasket = mapper.load(UnicornBasket.class, unicornBasket.getUuid());
+		UnicornBasket currentBasket = mapper.load(UnicornBasket.class, unicornBasket.getUserUuid());
 		
 		//if there is no current basket then use the incoming basket as the new basket
 		if(currentBasket==null) {
-			if(unicornBasket.getUuid()!=null && unicornBasket.getUnicorns()!=null) {
+			if(unicornBasket.getUserUuid()!=null && unicornBasket.getUnicorns()!=null) {
 				mapper.save(unicornBasket);
 				return "Added Unicorn to basket";
 			}
@@ -103,7 +103,7 @@ public class UnicornBasketImpl implements RequestHandler <UnicornBasket, String>
 		DynamoDBMapper mapper = new DynamoDBMapper(client);
 				
 		//Get current basket
-		UnicornBasket currentBasket = mapper.load(UnicornBasket.class, unicornBasket.getUuid());
+		UnicornBasket currentBasket = mapper.load(UnicornBasket.class, unicornBasket.getUserUuid());
 		
 		//if no basket exist then return an error
 		if(currentBasket==null) {						
@@ -159,8 +159,8 @@ public class UnicornBasketImpl implements RequestHandler <UnicornBasket, String>
 		AmazonDynamoDB client = AmazonDynamoDBClientBuilder.standard().build();				
 		DynamoDBMapper mapper = new DynamoDBMapper(client);
 						
-		if(unicornBasket.getUuid()!=null && !unicornBasket.getUuid().isEmpty()) {
-			return mapper.load(UnicornBasket.class, unicornBasket.getUuid());		
+		if(unicornBasket.getUserUuid()!=null && !unicornBasket.getUserUuid().isEmpty()) {
+			return mapper.load(UnicornBasket.class, unicornBasket.getUserUuid());		
 		}
 		return null;
 	}

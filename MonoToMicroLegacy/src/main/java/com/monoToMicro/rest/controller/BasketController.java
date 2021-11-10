@@ -61,7 +61,7 @@ public class BasketController extends CoreController {
 				
 		if(unicornBasket!=null && unicornBasket.getUnicorns()!=null && !unicornBasket.getUnicorns().isEmpty()) {
 			
-			String userUuid = unicornBasket.getUuid();		
+			String userUuid = unicornBasket.getUserUid();		
 			//Assuming only one Unicorn is added each time
 			String unicornUuid = unicornBasket.getUnicorns().get(0).getUuid();		
 			
@@ -82,7 +82,7 @@ public class BasketController extends CoreController {
 				
 		if(unicornBasket!=null && unicornBasket.getUnicorns()!=null && !unicornBasket.getUnicorns().isEmpty()) {
 			
-			String userUuid = unicornBasket.getUuid();		
+			String userUuid = unicornBasket.getUserUid();		
 			//Assuming only one Unicorn is added each time
 			String unicornUuid = unicornBasket.getUnicorns().get(0).getUuid();
 		
@@ -106,7 +106,7 @@ public class BasketController extends CoreController {
 		if (unicornsReadBasketEvent.isReadOK()) {
 			List<Unicorn> unicorns = unicornsReadBasketEvent.getUnicorns();
 			UnicornBasket unicornBasket = new UnicornBasket();
-			unicornBasket.setUuid(userUuid);
+			unicornBasket.setUserUid(userUuid);
 			unicornBasket.setUnicorns(unicorns);
 			return new ResponseEntity<UnicornBasket>(unicornBasket, HttpStatus.OK);			
 		}

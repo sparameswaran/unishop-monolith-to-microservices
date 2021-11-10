@@ -263,7 +263,7 @@ var myApp = angular.module('unicorn_app', ['ngRoute', 'ngResource']).controller(
                 contentType: "application/json",
                 // dataType: 'json',
                 data: JSON.stringify({
-                    "uuid": cuuid,
+                    "userUuid": cuuid,
                     "unicorns": [{
                         "uuid": puuid
                     }]
@@ -348,7 +348,7 @@ var myApp = angular.module('unicorn_app', ['ngRoute', 'ngResource']).controller(
             contentType: "application/json",
             // dataType: 'json',
             data: JSON.stringify({
-                "uuid": cuuid,
+                "userUuid": cuuid,
                 "unicorns": [{
                     "uuid": puuid
                 }]

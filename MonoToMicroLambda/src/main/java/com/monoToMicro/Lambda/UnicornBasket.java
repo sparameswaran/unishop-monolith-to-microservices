@@ -32,7 +32,7 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
 @DynamoDBTable(tableName="unishop")
 public class UnicornBasket {
 
-	private String uuid = null;
+	private String userUuid = null;
 	private List<Unicorn> unicorns = null;
 	
 	
@@ -47,7 +47,7 @@ public class UnicornBasket {
 	 * @param uuid
 	 */
 	public UnicornBasket(String uuid){
-		this.uuid = uuid;
+		this.userUuid = uuid;
 	}
 
 	/**
@@ -55,16 +55,16 @@ public class UnicornBasket {
 	 * @return
 	 */
 	@DynamoDBHashKey(attributeName="uuid")
-	public String getUuid() {
-		return uuid;
+	public String getUserUuid() {
+		return userUuid;
 	}
 
 	/**
 	 * 
 	 * @param uuid
 	 */
-	public void setUuid(String uuid) {
-		this.uuid = uuid;
+	public void setUserUuid(String uuid) {
+		this.userUuid = uuid;
 	}
 	
 	/**
